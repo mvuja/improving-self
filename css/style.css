@@ -7,6 +7,36 @@ body{
   overflow-x: hidden;
 }
 
+
+
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #324bec; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2034bb; 
+}
+
+
+::selection {
+  background-color: #324bec;
+  color: #fff;
+}
+
+
+
 h1 {
   font-size: 3.25rem;
   color: #1e2a43;
@@ -173,7 +203,7 @@ strong {
 
 .background {
   background-color: #f1f6ff;
-  padding: 5% 0;
+  padding: 75px 0;
 }
 
 .whiteBox {
@@ -296,6 +326,9 @@ strong {
 
 .progress-bar {
   background: #324bec;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
 }
 
 .progress {
@@ -442,16 +475,18 @@ figure:hover figcaption {
 
 .list-left li{
   cursor: pointer;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   list-style-type: none;
   font-weight: 700;
   height: 63px;
   padding: 0 30px;
-  font-size: 20px;
-  background-image: linear-gradient(to right, #000 15px, #f1f6ff 15px, #f1f6ff 100%);
+  font-size: 18px;
+  background-image: linear-gradient(to right, #1e2a43 15px, #f1f6ff 15px, #f1f6ff 100%);
   position: relative;
   letter-spacing: 3px;
+  color: #1e2a43;
 }
 
 .list-left li.active{
@@ -515,9 +550,15 @@ figure:hover figcaption {
   z-index: 5;
 }
 
+.list-left li:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+
+
 .content-wrapper{
   height: calc(100% - 15px);
-  padding: 50px 20px 20px 60px;
+  padding: 60px 20px 20px 80px;
 }
 
 .content-wrapper::before{
@@ -531,15 +572,25 @@ figure:hover figcaption {
   top: 24px;
 }
 
-
-
-
-
-
-
-.list-left li:not(:last-of-type) {
-  margin-bottom: 20px;
+.content-wrapper img{
+  width: 100px;
+  margin-bottom: 30px;
 }
+
+.content-wrapper p{
+  font-size: 20px;
+}
+
+.content-wrapper .divider{
+  width: 50%;
+  height: 5px;
+  background: linear-gradient(to right, #324BEC, #80E9FF);
+  margin-bottom: 13px;
+}
+
+
+
+
 
 
 
@@ -588,6 +639,7 @@ figure:hover figcaption {
   background-image: url(../images/BackgroundImage2.png);
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: cover;
   padding-bottom: 4%;
   margin-top: 5%;
 }
@@ -769,10 +821,16 @@ figure:hover figcaption {
   margin-bottom: 20px;
 }
 
-.loptica h2{
-  transform: translateY(25%);
+.loptica{
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
 }
 
+.loptica img{
+  width: 70px;
+  margin-right: 20px;
+}
 
 
 
@@ -791,7 +849,16 @@ figure:hover figcaption {
 /* media queries */
 
 
-@media (max-width: 1440px) {
+@media only screen and (min-width: 2000px) {
+  #progress{
+    background-size: cover;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 1440px) {
 	.object2,
   .object1 {
     display: none;
@@ -802,7 +869,7 @@ figure:hover figcaption {
 
 
 
-@media (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .object2,
   .object1 {
     display: none;
@@ -882,7 +949,7 @@ figure:hover figcaption {
 
 
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 
   .hero {
     background-image: url(../images/1024HeroBackground.png);
@@ -1015,12 +1082,26 @@ figure:hover figcaption {
   .navbar-dark .navbar-toggler:focus{
     outline: none;
   }
+}
 
 
 
-  /* security */
 
 
+@media only screen and (max-width: 767.98px) {
+
+  .list-left li::before {
+    display: none;
+  }
+  .list-left li::after {
+    display: none;
+  }
+  .content-wrapper::before{
+    display: none;
+  }
+  .content-wrapper{
+    padding: 50px 0;
+  }
 }
 
 
@@ -1028,9 +1109,7 @@ figure:hover figcaption {
 
 
 
-
-@media (max-width: 425px) {
-
+@media only screen and (max-width: 425px) {
   .hero {
     background-image: url(../images/MobileHeroBackground.png);
     background-position: top;
@@ -1167,19 +1246,20 @@ figure:hover figcaption {
   .lopta h3{
     position: static;
     display: block!important;
-    margin-bottom: 20%;
+    margin-bottom: 10px;
+    margin-top: 40px;
     margin-left: 0px!important;
+    transform: none;
   }
 
-  .loptica h2{
-    transform: translateY(65%);
+  .loptica img{
+    width: 50px;
+    margin-right: 20px;
   }
-  
-
 }
 
 
-@media (max-width:361px){
+@media only screen and (max-width:361px){
   #navbar a{
     padding: 0 18px;
   }

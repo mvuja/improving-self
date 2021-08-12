@@ -82,10 +82,8 @@
 
                 <div class="container mt-5 mb-5">
                     <div class="row zid">
-                        <div class="col-4 ">
+                        <div class="loptica">
                             <img class="text-right" src="images/PrivacyPolicyIcon.png" alt="PrivacyPolicyIcon">
-                        </div>
-                        <div class="col-8 loptica">
                             <h2 id="tekst1">Privacy Policy</h2>
                         </div>
                     </div>
@@ -140,10 +138,8 @@
 
                 <div class="container mt-5 mb-5">
                     <div class="row zid">
-                        <div class="col-4 ">
-                            <img class="text-right" src="images/PrivacyPolicyIcon.png" alt="PrivacyPolicyIcon">
-                        </div>
-                        <div class="col-8 loptica">
+                        <div class="loptica">
+                            <img class="text-right" src="images/PrivacyPolicyIcon.png" alt="Terms of services">
                             <h2 id="tekst1">Terms of Services</h2>
                         </div>
                     </div>
@@ -255,11 +251,11 @@
         $(document).ready(function(){
             $("#btn1").click(function(){
                 $(".terms").css('display', 'none');
-                $(".privacy").css('display', 'block');
+                $(".privacy").css('display', 'flex');
             });
             $("#btn2").click(function(){
                 $(".privacy").css('display', 'none');
-                $(".terms").css('display', 'block');
+                $(".terms").css('display', 'flex');
             });
         });
     </script>
