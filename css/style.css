@@ -64,6 +64,7 @@ a {
   color: #fff;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
+  transition: color .3s ease;
 }
 
 a:hover {
@@ -96,10 +97,11 @@ strong {
 
 .hero {
   background-image: url(../images/HeroBackgroundImage.jpg);
-  background-position: top;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 960px;
+  height: 940px;
+  position: relative;
 }
 
 .lightblue a {
@@ -107,6 +109,7 @@ strong {
   border: 1px solid #324bec;
   border-radius: 5px;
   padding: 20px 34px;
+  transition: background .3s ease, border .3s ease;
 }
 
 .lightblue a:hover {
@@ -132,7 +135,7 @@ strong {
 }
 
 .darkblue {
-  margin-top: 12%;
+  margin-top: 180px;
 }
 
 .navbar-dark .navbar-nav .active>.nav-link,
@@ -145,6 +148,7 @@ strong {
   padding: 25px 60px;
   border-radius: 5px;
   border: 2px solid #09063e;
+  transition: background .3s ease, color .3s ease;
 }
 
 .darkblue a:hover {
@@ -153,8 +157,9 @@ strong {
 }
 
 .arrow {
-  display: block;
-  margin-top: 25%;
+  position: absolute;
+  bottom: 20px;
+  left: 395px;
 }
 
 
@@ -239,12 +244,12 @@ strong {
   padding: 25px 60px;
   border-radius: 5px;
   border: 2px solid #09063e;
+  transition: background .3s ease, color .3s ease;
 }
 
 .owner a:hover {
   background-color: transparent;
   color: #09063e;
-  font-weight: 700;
 }
 
 #message img {
@@ -272,6 +277,7 @@ strong {
   border: 1px solid #324bec;
   border-radius: 5px;
   padding: 20px 34px;
+  transition: color .3s ease, background .3s ease, border .3s ease;
 }
 
 .lightblue6 a:hover {
@@ -323,11 +329,8 @@ figure img {
 }
 
 figcaption {
-  display: none;
-}
-
-figure:hover figcaption {
-  display: block;
+  opacity: 0;
+  transition: opacity .3s ease;
   position: absolute;
   z-index: 1;
   color: #ffffff;
@@ -340,6 +343,11 @@ figure:hover figcaption {
   padding: 2%;
   text-align: center;
   border-radius: 0 0 5px 5px;
+}
+
+figure:hover figcaption {
+  opacity: 1;
+
 }
 
 .pswp__caption__center {
@@ -420,6 +428,123 @@ figure:hover figcaption {
 
 
 
+.show-box{
+  display: none;
+}
+
+.show-box.active{
+  display: block;
+}
+
+.list-left{
+  position: relative;
+}
+
+.list-left li{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  font-weight: 700;
+  height: 63px;
+  padding: 0 30px;
+  font-size: 20px;
+  background-image: linear-gradient(to right, #000 15px, #f1f6ff 15px, #f1f6ff 100%);
+  position: relative;
+  letter-spacing: 3px;
+}
+
+.list-left li.active{
+  border: none !important;
+  text-align: center !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  background-image: linear-gradient(to right, #324BEC, #80E9FF) !important;
+  /* background-size: 300% 100% !important; */
+  /* background-image: linear-gradient(to right, #324BEC, #6cdef5, #324BEC, #6cdef5) !important; */
+  /* transition: background .5s ease; */
+}
+
+/* .list-left li.active:hover{
+  background-position: 50% 0;
+} */
+
+.list-left li.active::before {
+  opacity: 1;
+}
+
+.list-left li::before {
+  position: absolute;
+  content: '';
+  width: 16px;
+  height: 16px;
+  right: 20px;
+  background: #000;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.list-left li.active::after{
+  transition: all 0.2s linear;
+  width: 89px;
+  z-index: 5;
+}
+.list-left li::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 2px;
+  left: calc(100% - 20px);
+  background: #000;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.list-left span{
+  position: absolute;
+  content: '';
+  top: 0;
+  width: 2px;
+  height: 0;
+  left: calc(100% + 67px);
+  top: 30px;
+  background: #000;
+  transition: all 0.2s linear;
+  z-index: 5;
+}
+
+.content-wrapper{
+  height: calc(100% - 15px);
+  padding: 50px 20px 20px 60px;
+}
+
+.content-wrapper::before{
+  position: absolute;
+  content: '';
+  width: 16px;
+  height: 16px;
+  left: 45px;
+  background: #000;
+  border-radius: 50%;
+  top: 24px;
+}
+
+
+
+
+
+
+
+.list-left li:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+
+
+
+
 
 
 
@@ -496,8 +621,12 @@ figure:hover figcaption {
   display: inline;
 }
 
+.image h6 a {
+  font-weight: 700;
+}
+
 .image img{
-  transition: 1s ease;
+  transition: transform 1s ease;
 }
 
 .image img:hover{
@@ -524,11 +653,13 @@ figure:hover figcaption {
   color: #fff;
   background: #324bec;
   border: 1px solid #324bec;
+  transition: border .3s ease, background .3s ease;
 }
 
 .lightblue3:hover {
   border-color: #fff;
   background-color: transparent;
+  color: #fff;
 }
 
 .footernav2 a {
