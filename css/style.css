@@ -81,6 +81,11 @@ h6 {
   font-weight: 700;
 }
 
+button{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600!important;
+}
+
 p {
   font-size: 1rem;
   color: #9aa4b9;
@@ -426,7 +431,6 @@ figure:hover figcaption {
   background-clip: content-box;
   padding: 20px 15px;
   border-radius: 30px;
-  cursor: pointer;
   margin-bottom: 1.7%;
 }
 
